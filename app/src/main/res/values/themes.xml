@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <!-- TODO: Fix the bottomNavigationMenu unselected icon color (parent Theme.MaterialComponents breaks everything else) -->
+    <style name="Theme.FeedbackListV2" parent="Theme.MaterialComponents">
+        <!-- Primary brand color. -->
+        <!--Modified colorPrimary from purple_500-->
+        <item name="colorPrimary">@color/darkYellow</item>
+        <!--Modified colorPrimaryVariant from purple_700-->
+        <item name="colorPrimaryVariant">@color/darkYellow</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
