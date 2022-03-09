@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Upload Page v1</string>
+    <string name="insert_google_docs_link_here">Insert Google Docs Link Here</string>
+    <string name="get_shareable_link">Get shareable link</string>
+    <string name="submit">Submit</string>
+    <!--How does "format string" thing work in XML?-->
+    <string name="display_stored_link_prompt">What we got: %1$s</string>
+    <string name="initial_stored_link_prompt">What we got:</string>
+    <string name="upload_file">Upload file</string>
+    <string name="upload">UPLOAD</string>
+</resources>
