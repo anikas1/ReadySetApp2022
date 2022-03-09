@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Review Page v1</string>
+    <string name="comments">Comments</string>
+    <string name="comments_from_reviewer">Leave comments here</string>
+    <string name="element_text">Sample comment from reviewer</string>
+    <string name="submit_prompt">Submit</string>
+    <string name="home">Home</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="notifications">Notifications</string>
+    <string name="confirmation_prompt">Would you like to submit these comments? You will no longer be able to add to or edit them.</string>
+    <string name="confirmation_title">Submit?</string>
+</resources>
