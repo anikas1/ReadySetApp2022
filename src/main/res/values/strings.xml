@@ -25,7 +25,7 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <!--Upload Activity-->
-    <string name="insert_google_docs_link_here">Insert Google Docs Link Here</string>
+    <string name="insert_google_docs_link_here">Insert Link Here</string>
     <string name="get_shareable_link">Get shareable link</string>
     <string name="submit">Submit</string>
 
@@ -44,6 +44,21 @@
     <string name="confirmation_title">Submit?</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tap_to_expand">Tap to expand</string>
+    <string name="search_hint">Search for workspaces</string>
+    <string name="exit_title">Exit?</string>
+    <string name="exit_prompt">Would you like to exit and rate the review?</string>
+    <string name="exit">Exit</string>
 
+    <!--Tags-->
+    <string-array name="subject_array">
+        <item>eng</item>
+        <item>hist</item>
+        <item>math</item>
+        <item>fren</item>
+        <item>phys</item>
+        <item>sci</item>
+        <item>chem</item>
+    </string-array>
 
 </resources>

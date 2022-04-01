@@ -17,7 +17,8 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        android:background="@color/lightYellow"
-        app:menu="@menu/bottom_nav_menu" />
+        android:background="@color/lightBlue"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"/>
 
 </RelativeLayout>

@@ -26,7 +26,7 @@
 
     <TextView
         android:id="@+id/profileUsername"
-        android:layout_width="200dp"
+        android:layout_width="140dp"
         android:layout_height="@dimen/profile_picture_diameter"
         android:layout_marginTop="@dimen/margin_medium"
         android:layout_marginEnd="@dimen/margin_medium"
@@ -37,12 +37,24 @@
         android:textSize="14sp" />
 
     <TextView
+        android:id="@+id/point"
+        android:layout_width="50dp"
+        android:layout_height="@dimen/profile_picture_diameter"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_toEndOf="@id/profileUsername"
+        android:gravity="center_vertical"
+        android:text="@string/example_reviewer_username"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <TextView
         android:id="@+id/profileDate"
         android:layout_width="match_parent"
         android:layout_height="@dimen/profile_picture_diameter"
         android:layout_marginTop="@dimen/margin_medium"
         android:layout_marginEnd="@dimen/margin_medium"
-        android:layout_toEndOf="@id/profileUsername"
+        android:layout_toEndOf="@id/point"
         android:gravity="center_vertical"
         android:text="@string/mm_dd_yyyy"
         android:textColor="@color/black"
@@ -70,14 +82,24 @@
     <TextView
         android:id="@+id/essayPreview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/title_height"
         android:layout_below="@id/essayTitle"
         android:layout_marginStart="@dimen/margin_medium"
         android:layout_marginEnd="@dimen/margin_medium"
         android:layout_marginBottom="@dimen/margin_medium"
         android:gravity="center"
-        android:text="@string/tap_to_view_feedback"
-        android:textColor="@color/black"
+        android:text="@string/tap_to_expand"
+        android:textColor="@color/grayHint"
         android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/tagPicture"
+        android:layout_width="120dp"
+        android:layout_height="@dimen/profile_picture_diameter"
+        android:layout_below="@id/essayPreview"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:gravity="left"
+        app:srcCompat="@drawable/engtag" />
 
 </RelativeLayout>

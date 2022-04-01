@@ -1,5 +1,6 @@
 package com.example.readysetappv1;
 
+import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +41,17 @@ public class WorkspaceActivity extends AppCompatActivity {
         theButton5.setOnClickListener(this::onClickSubmit);
         theButton6.setOnClickListener(this::onClickSubmit);
 
+        // Get the intent, verify the action and get the query
+        Intent intent = getIntent();
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            doMySearch(query);
+        }
+
+    }
+
+    private void doMySearch(String query) {
+        // does nothing
     }
 
     private void onClickSubmit(View v) {

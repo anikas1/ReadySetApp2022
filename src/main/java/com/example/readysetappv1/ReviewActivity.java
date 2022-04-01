@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Base64;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,26 +58,24 @@ public class ReviewActivity extends AppCompatActivity {
         });
 
         AlertDialog dialog = builder.create();
+        dialog.setOnShowListener( new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface arg0) {
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+                dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+            }
+        });
         dialog.show();
     }
 
     public static void displayDocument(String link, WebView webView) {
-        // margin problem
-        String link1 = "https://docs.google.com/document/d/e/2PACX-1vS_qZhJg3WDQ34KTHSMJf5kQN49LHPjtYIZfyaCY15YA5QvSSUni9ulaPkztNRkdAeN37gDAGHBzet6/pub?embedded=true";
-        // showing how bad 1" margin is
-        String link2 = "https://docs.google.com/document/d/e/2PACX-1vQm6B9bRyowQ3xgZuVUbhfMWysVpt0DNZRz4z7n-lnYMVlm8W9tzKQ7cJXeP-ck_144renjnJ2z2gu9/pub?embedded=true";
-        // automatic update problem
-        String link3 = "https://docs.google.com/document/d/e/2PACX-1vSF1EeIbfUgQcYsKO-5Q3Eh251L0uzForiOqcyuZ5P22f41lELPF1iHZsm_9oBtj6OebyI1lhf6CONq/pub";
         // looks fine: 0" margin, 12-14 pt font size
-        // TODO: Create method to convert file/google doc into desired formatting
-        // TODO: Access Google Docs API to publish a file
         String link4 = "https://docs.google.com/document/d/e/2PACX-1vStS51jKgVXMurxsmd6N4gMVZpuTzEnPsmAdjfWad56Bl7iYAHxwu1wbetV5nXg5IuoAlh4gzCo0QwR/pub";
         // ignores some formatting like page numbers or certain fonts(?)
-        // TODO: Include message when submitting file/grading essay that the formatting will be removed
         String link5 = "https://docs.google.com/document/d/e/2PACX-1vSS6GGY5v9Co51dJG7ATf76PjSZcNrKa96vysHg9rm7yzPmffFJNZJOGFC89hv0BEunCqfdr2y-UV_p/pub";
 
 //        String doc="<iframe src=\"" + link4 + "\" width='100%' height='100%' style='margin:0;padding:0;border:0;' display:block></iframe>";
-//        myWebView.loadData(doc, "text/html",  "UTF-8");
+//        webView.loadData(doc, "text/html",  "UTF-8");
 
         // TODO: Get something like this to work
         // Look back at RegexExample

@@ -84,27 +84,21 @@ public class FeedbackListFragment extends Fragment implements MyRecyclerViewAdap
         ArrayList<HashMap<String, String>> essayTitles = new ArrayList<>();
         // ideally something like ArrayList<User>
 
-        // TODO: Link this up with User object (including profile picture info?)
-        HashMap<String, String> review0 = new HashMap<>();
-        review0.put("reviewerUsername", "Alexander Pushkin");
-        review0.put("date", "01/29/1837");
-        review0.put("essayTitle", "Crime and Punishment");
-        review0.put("profilePicture", String.valueOf(R.drawable.pushkin_cropped));
-        essayTitles.add(review0);
+        String[] reviewerUsername = new String[] {"Anika Suman", "Jason Yin", "Eric Wang", "Giggy"};
+        int[] point = new int[] {48, 46, 47, 20};
+        int[] day = new int[] {24, 22, 22, 17};
+        String[] essayTitle = new String[] {"Bits and Pieces of Humanity", "Where Improvement Comes From", "Degrees of Midsummer Night Dreams", "How I Got Here"};
+        int[] profilePicture = new int[] {R.drawable.anika_square, R.drawable.jason_square, R.drawable.eric_square, R.drawable.giggy_square};
+        int[] tagPicture = new int[] {R.drawable.chemtag, R.drawable.engtag, R.drawable.engtag, R.drawable.engtag};
 
-        HashMap<String, String> review1 = new HashMap<>();
-        review1.put("reviewerUsername", "Nikolai Gogol");
-        review1.put("date", "02/21/1852");
-        review1.put("essayTitle", "The Brothers Karamazov");
-        review1.put("profilePicture", String.valueOf(R.drawable.gogol_cropped));
-        essayTitles.add(review1);
-
-        for (int i=0; i<5; i++) {
+        for (int i=0; i<4; i++) {
             HashMap<String, String> review = new HashMap<>();
-            review.put("reviewerUsername", "Nikolai Gogol" + i);
-            review.put("date", "02/21/1852");
-            review.put("essayTitle", "The Brothers Karamazov");
-            review.put("profilePicture", String.valueOf(R.drawable.gogol_cropped));
+            review.put("reviewerUsername", reviewerUsername[i]);
+            review.put("point", String.valueOf(point[i]));
+            review.put("date", "02/" + day[i] + "/2022");
+            review.put("essayTitle", essayTitle[i]);
+            review.put("profilePicture", String.valueOf(profilePicture[i]));
+            review.put("tagPicture", String.valueOf(tagPicture[i]));
             essayTitles.add(review);
         }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="PossibleButtonStyle">
         <item name="android:textSize">19dp</item>
         <item name="android:layout_width">wrap_content</item>
@@ -29,9 +30,15 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
     <style name="divider">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:background">?android:attr/listDivider</item>
     </style>
+
+    <style name="rating">
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>

@@ -7,8 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -22,6 +25,8 @@ public class UploadFragment extends Fragment {
 
     private EditText link_text;
     private Button submit_button;
+    private Spinner spinner1;
+    private Spinner spinner2;
 
     public UploadFragment() {
         // Required empty public constructor
@@ -54,6 +59,55 @@ public class UploadFragment extends Fragment {
         link_text = v.findViewById(R.id.link_input);
         submit_button = v.findViewById(R.id.button_input);
         submit_button.setOnClickListener(this::onClickSubmit);
+        spinner1 = v.findViewById(R.id.primaryTag);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(),
+                R.array.subject_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner1.setAdapter(adapter1);
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String[] array2;
+                if (spinner1.getSelectedItem().toString().equals("eng")) {
+                    array2 = new String[] {"ap lang", "ap lit", "eng 1", "eng 2", "eng 3", "eng 4", "jrnl", "crea"};
+                } else if (spinner1.getSelectedItem().toString().equals("hist")) {
+                    array2 = new String[] {"u.s.", "euro", "world", "afr", "asia", "aus", "ancient", "modern"};
+                } else {
+                    array2 = new String[] {"oops"};
+                }
+                ArrayAdapter<String> adapter2 = new ArrayAdapter(getContext(),
+                        android.R.layout.simple_spinner_item, array2);
+// Specify the layout to use when the list of choices appears
+                adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+                spinner2.setAdapter(adapter2);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                String[] array2 = new String[] {"ap lang", "ap lit", "eng 1", "eng 2", "eng 3", "eng 4", "jrnl", "crea"};
+                ArrayAdapter<String> adapter2 = new ArrayAdapter(getContext(),
+                        android.R.layout.simple_spinner_item, array2);
+// Specify the layout to use when the list of choices appears
+                adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+                spinner2.setAdapter(adapter2);
+            }
+        });
+        spinner2 = v.findViewById(R.id.secondaryTag);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        // TODO: Switch cases based on spinner 1 result
+        String[] array2 = new String[] {"ap lang", "ap lit", "eng 1", "eng 2", "eng 3", "eng 4", "jrnl", "crea"};
+        ArrayAdapter<String> adapter2 = new ArrayAdapter(getContext(),
+                android.R.layout.simple_spinner_item, array2);
+// Specify the layout to use when the list of choices appears
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner2.setAdapter(adapter2);
+
         return v;
     }
 

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -41,15 +42,20 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public void onBindViewHolder(ViewHolder holder, int position) {
         HashMap<String, String> review = mData.get(position);
         String reviewerUsername = review.get("reviewerUsername");
+        String point = review.get("point");
         String date = review.get("date");
         String essayTitle = review.get("essayTitle");
         String profilePicture = review.get("profilePicture");
+        String tagPicture = review.get("tagPicture");
         holder.reviewerUsernameView.setText(reviewerUsername);
+        holder.pointView.setText(point);
         holder.dateView.setText(date);
         holder.essayTitleView.setText(essayTitle);
         // kind of redundant to cast to String and back
         if (profilePicture == null) profilePicture = String.valueOf(R.drawable.generic_profile_picture);
         holder.profilePictureView.setImageResource(Integer.parseInt(profilePicture));
+        if (tagPicture == null) tagPicture = String.valueOf(R.drawable.engtag);
+        holder.tagPictureView.setImageResource(Integer.parseInt(tagPicture));
     }
 
     // total number of rows
@@ -62,16 +68,20 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView reviewerUsernameView;
+        TextView pointView;
         TextView dateView;
         TextView essayTitleView;
         ShapeableImageView profilePictureView;
+        ImageView tagPictureView;
 
         ViewHolder(View itemView) {
             super(itemView);
             reviewerUsernameView = itemView.findViewById(R.id.profileUsername);
+            pointView = itemView.findViewById(R.id.point);
             dateView = itemView.findViewById(R.id.profileDate);
             essayTitleView = itemView.findViewById(R.id.essayTitle);
             profilePictureView = itemView.findViewById(R.id.profilePicture);
+            tagPictureView = itemView.findViewById(R.id.tagPicture);
             itemView.setOnClickListener(this);
         }
 
